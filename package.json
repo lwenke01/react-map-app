@@ -8,7 +8,7 @@
     "test": "NODE_ENV=test ./node_modules/karma/bin/karma start karma.conf.js",
     "test:watch": "npm run test -- --watch"
   },
-  "author": "",
+  "author": "Lisa Wenke",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
@@ -53,8 +53,24 @@
   },
   "dependencies": {
     "font-awesome": "^4.6.3",
+    "google-maps-react": "^1.0.16",
+    "jasmine-core": "^2.4.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.4.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lwenke01/react-map-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lwenke01/react-map-app/issues"
+  },
+  "homepage": "https://github.com/lwenke01/react-map-app#readme",
+  "keywords": [
+    "react",
+    "bootstrap",
+    "google",
+    "maps"
+  ]
 }
