@@ -10,8 +10,8 @@ import Sidebar from 'components/Sidebar/Sidebar'
 import styles from './styles.module.css'
 
 export class Container extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this.state = {
       places: [],
@@ -42,21 +42,22 @@ export class Container extends React.Component {
   onMapMove() {}
 
   onMarkerClick(item) {
-    const {push} = this.context.router;
     const {place} = item;
+    const {push} = this.context.router;
     push(`/map/detail/${place.place_id}`)
   }
   render() {
     let children = null;
     if (this.props.children) {
-      children = React.cloneElement(this.props.children, {
-        google: this.props.google,
-        places: this.state.places,
-        loaded: this.props.loaded,
-        router: this.context.router,
-        onMove: this.onMapMove.bind(this),
-        onMarkerClick: this.onMarkerClick.bind(this),
-        zoom: this.props.zoom
+      children = React.cloneElement(this.props.children,
+        {
+          google: this.props.google,
+          places: this.state.places,
+          loaded: this.props.loaded,
+          // router: this.context.router,
+          // onMove: this.onMapMove.bind(this),
+          onMarkerClick: this.onMarkerClick.bind(this),
+          // zoom: this.props.zoom
       })
     }
     return (
@@ -75,7 +76,7 @@ export class Container extends React.Component {
 
           <div className={styles.content}>
           {children}
-        
+
           </div>
         </Map>
 
@@ -83,9 +84,9 @@ export class Container extends React.Component {
    }
  }
 
-// Container.contextTypes = {
-//   router: T.object
-// }
+Container.contextTypes = {
+  router: React.PropTypes.object
+}
 export default GoogleApiWrapper({
   apiKey: __GAPI_KEY__
 })(Container)

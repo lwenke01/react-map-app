@@ -13,14 +13,14 @@ export class Item extends React.Component {
     }
   }
 
-  onClick(e) {
-    this.props.onclick(this.props.place);
-  }
+  // onClick(e) {
+  //   this.props.onClick(this.props.place);
+  // }
   render() {
     const {place} = this.props;
     return (
       <div
-        onClick={this.onClick.bind(this)}
+        // onClick={this.onClick.bind(this)}
         className={classnames(styles.item, {
           [styles.itemHovered]: this.state.hovered
         })}>
@@ -28,10 +28,19 @@ export class Item extends React.Component {
           <h1 className={classnames(styles.title)}>{place.name}</h1>
           <Rating className={styles.rating}
                   percentage={(place.rating/5)} />
-        
+
           </div>
     )
   }
+}
+Item.propTypes = {
+  place: T.object.isRequired,
+  onHighlight: T.func,
+}
+
+Item.defaultProps = {
+  onHighlight: () => {},
+  offHighlight: () => {}
 }
 
 export default Item
