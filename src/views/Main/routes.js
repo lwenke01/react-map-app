@@ -13,9 +13,9 @@ export const makeMainRoutes = () => {
       <Route path="detail/:placeId"
             component={Detail} />
       </Route>
-
-      <IndexRoute component={Map} />
-    </Route>
+    //
+    //   <IndexRoute component={Map} />
+    // </Route>
   )
 }
 
