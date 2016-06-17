@@ -52,7 +52,10 @@
     "yargs": "^4.7.1"
   },
   "dependencies": {
+    "babel-plugin-transform-es2015-modules-umd": "^6.8.0",
+    "cheerio": "^0.20.0",
     "classnames": "^2.2.5",
+    "cross-env": "^1.0.8",
     "font-awesome": "^4.6.3",
     "google-maps-react": "^1.0.16",
     "jasmine-core": "^2.4.1",
