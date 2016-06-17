@@ -75,6 +75,7 @@ export class Container extends React.Component {
 
           <div className={styles.content}>
           {children}
+        
           </div>
         </Map>
 
