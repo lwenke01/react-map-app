@@ -54,10 +54,10 @@ export class Container extends React.Component {
           google: this.props.google,
           places: this.state.places,
           loaded: this.props.loaded,
-          // router: this.context.router,
-          // onMove: this.onMapMove.bind(this),
+          router: this.context.router,
+          onMove: this.onMapMove.bind(this),
           onMarkerClick: this.onMarkerClick.bind(this),
-          // zoom: this.props.zoom
+          zoom: this.props.zoom
       })
     }
     return (

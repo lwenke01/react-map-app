@@ -13,14 +13,14 @@ export class Item extends React.Component {
     }
   }
 
-  // onClick(e) {
-  //   this.props.onClick(this.props.place);
-  // }
+  onClick(e) {
+    this.props.onClick(this.props.place);
+  }
   render() {
     const {place} = this.props;
     return (
       <div
-        // onClick={this.onClick.bind(this)}
+        onClick={this.onClick.bind(this)}
         className={classnames(styles.item, {
           [styles.itemHovered]: this.state.hovered
         })}>

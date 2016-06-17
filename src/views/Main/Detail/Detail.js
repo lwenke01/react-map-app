@@ -32,18 +32,7 @@ export class Detail extends React.Component {
       this.getDetails(this.props.map);
     }
   }
-renderPhotos(place) {
-  // if (!place.photos || place.photos.length == 0) return;
-  //
-  // const cfg = {maxWidth: 100, maxHeight: 100}
-  // return (<div className={styles.photoStrip}>
-  //     {place.photos.map(p => {
-  //       const url = `${p.getUrl(cfg)}.png`
-  //       return (<img key={url} src={url} />)
-  //     })}
-  //     </div>
-  // )
-}
+
 
   getDetails(map) {
     const {google, params} = this.props;
@@ -77,14 +66,14 @@ renderPhotos(place) {
     const {place} = this.state;
 
     return (
-      <div className={styles.wrapper}>
-      <div  className={styles.header}>
+      // <div className={styles.wrapper}>
+      <div className={styles.header}>
       <h2>{place.name}</h2>
       </div>
-      div className={styles.details}>
-      {this.renderPhotos(place)}
-      </div>
-    </div>
+      // div className={styles.details}>
+      // {this.renderPhotos(place)}
+      // </div>
+    // </div>
       // <div className={style.details}>
       // </div>
     )
