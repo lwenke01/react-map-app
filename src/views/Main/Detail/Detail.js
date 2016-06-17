@@ -66,14 +66,14 @@ export class Detail extends React.Component {
     const {place} = this.state;
 
     return (
-      <div className={styles.wrapper}>
-      <div  className={styles.header}>
+      // <div className={styles.wrapper}>
+      <div className={styles.header}>
       <h2>{place.name}</h2>
       </div>
-      div className={styles.details}>
-      {this.renderPhotos(place)}
-      </div>
-    </div>
+      // div className={styles.details}>
+      // {this.renderPhotos(place)}
+      // </div>
+    // </div>
       // <div className={style.details}>
       // </div>
     )
