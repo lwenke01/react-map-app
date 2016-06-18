@@ -2,6 +2,15 @@
 
 ##Creating a Yelp type app using React, Bootstrap & Google Maps API
 
+###using
+postCSS
+Google Maps API
+Google Places
+React
+webpack
+
+
+
 ##Lisa Wenke
 
 install packages: $ npm install

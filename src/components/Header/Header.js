@@ -7,9 +7,12 @@ export class Header extends React.Component {
     return (
       <div className={styles.topbar}>
         <Link to="/"><h1>FoodTopia</h1></Link>
+
+        <Link to="/cafes"><h3>Cafes</h3></Link>
         <section>
-          Search for food
+            <Link to="/"><h4>Back to Map</h4></Link>
         </section>
+
       </div>
     )
   }

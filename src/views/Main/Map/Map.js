@@ -1,10 +1,14 @@
 import React, { PropTypes as T } from 'react'
 import classnames from 'classnames'
-import Map, { GoogleApiWrapper, Marker } from 'google-maps-react'
+import {GoogleApiWrapper} from 'GoogleMapsReactComponent'
+import Map, { Marker } from 'google-maps-react'
 
 import styles from './styles.module.css'
 
+const eventNames : ['click', 'ready', 'mouseover'];
+
 export class MapComponent extends React.Component {
+
   //get markers
   _renderMarkers(){
     if (!this.props.places) {
@@ -35,6 +39,22 @@ export class MapComponent extends React.Component {
     } else {
       return this._renderMarkers();
     }
+  }
+
+  //render infowindow
+  google.maps.event.addListener(marker, 'click', function(){
+    infowindow.setContent(this._renderInfoWindow(place));
+    infowindow.open(map, this);
+  });
+
+  _renderInfoWindow: function (place){
+    return(
+      <Info
+      onClick={this.props.onMarkerClick.bind(this)}>
+      {place.name}
+       <button className="btn btn-danger btn-block" onClick={this.props.addList.bind(this, place)}>I want to go here !! </button>
+      </div>
+    )
   }
   //get map
   render() {
@@ -70,4 +90,5 @@ export class MapComponent extends React.Component {
   //   centerAroundCurrentLocation: false
   // }
 }
+
 export default MapComponent

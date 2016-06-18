@@ -10,15 +10,7 @@ import Sidebar from 'components/Sidebar/Sidebar'
 import styles from './styles.module.css'
 
 export class Container extends React.Component {
-  getInitialState: function (){
-    return {
 
-    }
-  }
-  const dLoc = {
-    lat: -33,
-    lng: -122
-  }
   constructor(props, context) {
     super(props, context);
 
@@ -33,10 +25,9 @@ export class Container extends React.Component {
       map,
       {
 
-        location: dLoc,
+        location: map.center,
         radius: '1500',
-        types: ['restaurant'],
-        showingInfoWindow: false
+        types: ['cafe']
 
       }
     ).then((results, pagination) => {
@@ -56,14 +47,7 @@ export class Container extends React.Component {
     const {place} = item;
     const {push} = this.context.router;
     push(`/map/detail/${place.place_id}`)
-    showingInfoWindow= true
   }
-  // onMarkerHover(item) {
-  //   const {place} = item;
-  //   // const {push} = this.context.router;
-  //   // push(`/map/detail/${place.place_id}`)
-  // )
-  // }
   render() {
     let children = null;
     if (this.props.children) {
@@ -87,7 +71,7 @@ export class Container extends React.Component {
           <Header />
 
           <Sidebar
-            title={'Restaurants'}
+            title={'Cafes'}
             onListItemClick={this.onMarkerClick.bind(this)}
             places={this.state.places}
             />

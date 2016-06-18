@@ -1,6 +1,7 @@
 import React from 'react'
 import {Route, IndexRoute} from 'react-router'
 import Container from './Container'
+import Cafe from './CafeContainer'
 
 import Map from './Map/Map'
 import Detail from './Detail/Detail'
@@ -13,9 +14,15 @@ export const makeMainRoutes = () => {
       <Route path="detail/:placeId"
             component={Detail} />
       </Route>
-    //
-    //   <IndexRoute component={Map} />
-    // </Route>
+  </Route>
+
+    <Route path="/cafes" component={CafeContainer} />
+      <Route path="map" component={Map}>
+      <Route path="detail/:placeId"
+            component={Detail} />
+      </Route>
+
+    </Route>
   )
 }
 
