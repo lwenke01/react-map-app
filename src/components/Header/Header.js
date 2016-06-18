@@ -6,9 +6,9 @@ export class Header extends React.Component {
   render() {
     return (
       <div className={styles.topbar}>
-        <Link to="/"><h1>Yelp</h1></Link>
+        <Link to="/"><h1>FoodTopia</h1></Link>
         <section>
-          Fullstack.io
+          Search for food
         </section>
       </div>
     )
