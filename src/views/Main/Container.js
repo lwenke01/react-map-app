@@ -14,23 +14,28 @@ export class Container extends React.Component {
     super(props, context);
 
     this.state = {
-      places: [],
-      pagination: null
+      places: []
+      // pagination: null
     }
   }
   onReady(mapProps, map){
+    console.log("MAP is " + map.center);
+    console.log("MAPprops is " + mapProps{});
     searchNearby(
       this.props.google,
       map,
       {
+
         location: map.center,
         radius: '500',
-        types: ['restaurant']
+        types: ['cafe']
 
       }
     ).then((results, pagination) => {
+      console.log('Results ' + results.places);
       this.setState({
         places: results,
+        // console.log('PLACES ' + places);
         pagination
       })
     }).catch((status) => {
