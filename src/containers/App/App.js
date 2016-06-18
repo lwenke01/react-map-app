@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 import { Router } from 'react-router'
-import ReactDOM from 'react-dom'
-
-import styles from './styles.module.css'
+// import ReactDOM from 'react-dom';
+//
+// import styles from './styles.module.css'
 
 // const App = React.createClass({
 //   render: function(){
@@ -17,8 +17,12 @@ import styles from './styles.module.css'
 // });
 
 class App extends React.Component {
+  static contextTypes = {
+    router: PropTypes.object
+  }
   static PropTypes = {
-    history: PropTypes.object.isRequired
+    history: PropTypes.object.isRequired,
+    routes: PropTypes.element.isRequired
   }
   //class getter
   get content() {

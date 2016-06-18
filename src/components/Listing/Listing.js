@@ -11,7 +11,7 @@ export class Listing extends React.Component {
         {this.props.places.map(place => {
           return (
             <Item place={place}
-                  onClick={this.props.OnClick}
+                  onClick={this.props.onClick}
                   onHighlight={this.props.onHighlight}
                   offHighlight={this.props.offHighlight}
                   key={place.id} />
