@@ -14,7 +14,7 @@ export const makeMainRoutes = () => {
             component={Detail} />
       </Route>
     //
-    //   <IndexRoute component={Map} />
+      <IndexRoute component={Map} />
     // </Route>
   )
 }

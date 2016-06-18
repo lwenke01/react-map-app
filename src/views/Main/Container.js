@@ -21,7 +21,7 @@ export class Container extends React.Component {
   onReady(mapProps, map){
 
     console.log("MAP is " + map.center);
-    console.log("MAPprops is " + mapProps.google.maps.places.PlacesServiceStatus);
+    console.log("MAPprops is " + mapProps.google.maps.places.PlacesServiceStatus.OK);
     searchNearby(
       // var seattle = new google.maps.LatLng(-33.8665433,151.1956316);
       this.props.google,
@@ -29,7 +29,7 @@ export class Container extends React.Component {
       {
 
         location: map.center,
-        radius: '1000',
+        radius: '5000',
         types: ['restaurant']
 
       }
