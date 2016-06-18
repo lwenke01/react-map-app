@@ -56,18 +56,18 @@ export class MapComponent extends React.Component {
     )
   }
 }
-// Map.propTypes = {
-//   google: React.PropTypes.object,
-//   zoom: React.PropTypes.number,
-//   initialCenter: React.PropTypes.object,
-//   centerAroundCurrentLocation: React.PropTypes.bool
-// }
-// Map.defaultProps = {
-//   zoom: 13,
-//   initialCenter: {
-//     lat: 37.774929,
-//     lng: -122.419416
-//   },
-//   centerAroundCurrentLocation: false
-// }
+MapComponent.propTypes = {
+  google: React.PropTypes.object,
+  zoom: React.PropTypes.number,
+  initialCenter: React.PropTypes.object,
+  centerAroundCurrentLocation: React.PropTypes.bool
+}
+MapComponent.defaultProps = {
+  zoom: 13,
+  initialCenter: {
+    lat: 47.6062,
+    lng: -122.3321
+  },
+  centerAroundCurrentLocation: false
+}
 export default MapComponent

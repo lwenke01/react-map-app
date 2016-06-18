@@ -2,6 +2,9 @@ import React, { PropTypes as T } from 'react'
 import classnames from 'classnames'
 import {getDetails} from 'utils/googleApiHelpers'
 
+import Rating from 'components/Rating/Rating'
+import Price from 'components/Price/Price'
+
 import styles from './styles.module.css'
 
 export class Detail extends React.Component {
@@ -79,6 +82,9 @@ renderPhotos(place) {
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <h2>{place.name}</h2>
+          <Rating className={styles.rating1}
+                  percentage={(place.rating/5)} />
+          <p>{place.price_level}</p>
         </div>
         <div className={styles.details}>
           {this.renderPhotos(place)}
