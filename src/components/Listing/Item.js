@@ -37,10 +37,10 @@ export class Item extends React.Component {
     )
   }
 }
-Item.propTypes = {
-  place: T.object.isRequired,
-  onHighlight: T.func,
-}
+// Item.propTypes = {
+//   place: T.object.isRequired,
+//   onHighlight: T.func,
+// }
 
 Item.defaultProps = {
   onHighlight: () => {},

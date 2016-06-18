@@ -14,25 +14,27 @@ export class Container extends React.Component {
     super(props, context);
 
     this.state = {
-      places: []
-      // pagination: null
+      places: [],
+      pagination: null
     }
   }
   onReady(mapProps, map){
+
     console.log("MAP is " + map.center);
-    console.log("MAPprops is " + mapProps{});
+    console.log("MAPprops is " + mapProps.google.maps.places.PlacesServiceStatus);
     searchNearby(
+      // var seattle = new google.maps.LatLng(-33.8665433,151.1956316);
       this.props.google,
       map,
       {
 
         location: map.center,
-        radius: '500',
-        types: ['cafe']
+        radius: '1000',
+        types: ['restaurant']
 
       }
     ).then((results, pagination) => {
-      console.log('Results ' + results.places);
+      console.log('Results ' + results);
       this.setState({
         places: results,
         // console.log('PLACES ' + places);

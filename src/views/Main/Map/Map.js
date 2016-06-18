@@ -32,8 +32,8 @@ export class MapComponent extends React.Component {
       return React.Children.map(children, c => {
         return React.cloneElement(c, {
           map: this.map,
-          google: this.props.google,
-          mapCenter: this.state.centerAroundCurrentLocation
+          google: this.props.google
+          // mapCenter: this.state.centerAroundCurrentLocation
         });
       })
 
