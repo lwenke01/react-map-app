@@ -1,11 +1,10 @@
 import React, { PropTypes as T } from 'react'
 import classnames from 'classnames'
-import {GoogleApiWrapper} from 'GoogleMapsReactComponent'
-import Map, { Marker } from 'google-maps-react'
+import Map, { GoogleApiWrapper, Marker } from 'google-maps-react'
 
 import styles from './styles.module.css'
 
-const eventNames : ['click', 'ready', 'mouseover'];
+
 
 export class MapComponent extends React.Component {
 
@@ -41,21 +40,21 @@ export class MapComponent extends React.Component {
     }
   }
 
-  //render infowindow
-  google.maps.event.addListener(marker, 'click', function(){
-    infowindow.setContent(this._renderInfoWindow(place));
-    infowindow.open(map, this);
-  });
-
-  _renderInfoWindow: function (place){
-    return(
-      <Info
-      onClick={this.props.onMarkerClick.bind(this)}>
-      {place.name}
-       <button className="btn btn-danger btn-block" onClick={this.props.addList.bind(this, place)}>I want to go here !! </button>
-      </div>
-    )
-  }
+  // //render infowindow
+  // google.maps.event.addListener(marker, 'click', function(){
+  //   infowindow.setContent(this._renderInfoWindow(place));
+  //   infowindow.open(map, this);
+  // });
+  //
+  // _renderInfoWindow: function (place){
+  //   return(
+  //     <Info
+  //     onClick={this.props.onMarkerClick.bind(this)}>
+  //     {place.name}
+  //      <button className="btn btn-danger btn-block" onClick={this.props.addList.bind(this, place)}>I want to go here !! </button>
+  //     </div>
+  //   )
+  // }
   //get map
   render() {
     const {children} = this.props;

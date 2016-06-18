@@ -39,7 +39,7 @@ export class Detail extends React.Component {
 renderPhotos(place) {
   if (!place.photos || place.photos.length == 0) return;
 
-  const cfg = {maxWidth: 200, maxHeight: 200}
+  const cfg = {maxWidth: 100, maxHeight: 100}
   return <div className={styles.photoStrip}>
     {place.photos.map(p => {
       const url = `${p.getUrl(cfg)}.png`
