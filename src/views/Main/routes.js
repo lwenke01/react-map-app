@@ -16,13 +16,7 @@ export const makeMainRoutes = () => {
       </Route>
   </Route>
 
-    // <Route path="/cafes" component={CafeContainer} />
-    //   <Route path="map" component={Map}>
-    //   <Route path="detail/:placeId"
-    //         component={Detail} />
-    //   </Route>
-    //
-    // </Route>
+
   )
 }
 

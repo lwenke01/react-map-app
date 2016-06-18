@@ -25,9 +25,9 @@ export class Container extends React.Component {
       {
 
         location: map.center,
-        radius: '1500',
-        types: ['restaurant'],
-        // showingInfoWindow: false
+        radius: '500',
+        types: ['restaurant']
+
 
       }
     ).then((results, pagination) => {
@@ -47,14 +47,9 @@ export class Container extends React.Component {
     const {place} = item;
     const {push} = this.context.router;
     push(`/map/detail/${place.place_id}`)
-    // showingInfoWindow= true
+
   }
-  // onMarkerHover(item) {
-  //   const {place} = item;
-  //   // const {push} = this.context.router;
-  //   // push(`/map/detail/${place.place_id}`)
-  // )
-  // }
+
   render() {
     let children = null;
     if (this.props.children) {

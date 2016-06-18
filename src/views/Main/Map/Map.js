@@ -1,6 +1,6 @@
 import React, { PropTypes as T } from 'react'
 import classnames from 'classnames'
-import Map, { GoogleApiWrapper, Marker } from 'google-maps-react'
+import Map, {GoogleApiWrapper, Marker} from 'google-maps-react'
 
 import styles from './styles.module.css'
 
@@ -40,21 +40,7 @@ export class MapComponent extends React.Component {
     }
   }
 
-  // //render infowindow
-  // google.maps.event.addListener(marker, 'click', function(){
-  //   infowindow.setContent(this._renderInfoWindow(place));
-  //   infowindow.open(map, this);
-  // });
-  //
-  // _renderInfoWindow: function (place){
-  //   return(
-  //     <Info
-  //     onClick={this.props.onMarkerClick.bind(this)}>
-  //     {place.name}
-  //      <button className="btn btn-danger btn-block" onClick={this.props.addList.bind(this, place)}>I want to go here !! </button>
-  //     </div>
-  //   )
-  // }
+
   //get map
   render() {
     const {children} = this.props;
@@ -74,20 +60,13 @@ export class MapComponent extends React.Component {
       </Map>
     )
   }
-  // MapComponent.propTypes = {
-  //   google: React.PropTypes.object,
-  //   zoom: React.PropTypes.number,
-  //   initialCenter: React.PropTypes.object,
-  //   centerAroundCurrentLocation: React.PropTypes.bool
-  // }
-  // MapComponent.defaultProps = {
-  //   zoom: 13,
-  //   initialCenter: {
-  //     lat: 47.6062,
-  //     lng: -122.3321
-  //   },
-  //   centerAroundCurrentLocation: false
-  // }
-}
 
+}
+MapComponent.propTypes = {
+  onMarkerClick: T.func
+}
+const identity = (...a) => a;
+MapComponent.defaultProps = {
+  onMarkerClick: identity
+}
 export default MapComponent

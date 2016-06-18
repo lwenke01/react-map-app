@@ -110,6 +110,11 @@ renderPhotos(place) {
         <div className={styles.header}>
         <h2>{place.types}</h2>
           <h2>{place.name}</h2>
+          <div className={styles.rate}><Rating
+          percentage={(place.rating/5)} />
+          <Price className={styles.price_level}
+          percentage={(place.price_level/5)} />
+          </div>
           <h4>{place.formatted_address}</h4>
 
           <div className={styles.bar}>
@@ -120,9 +125,6 @@ renderPhotos(place) {
         </div>
 
 
-            <div>Rating:<Rating className={styles.rating1}
-                  percentage={(place.rating/5)} />
-                </div>
 
         <div className={styles.details}>
           {this.renderPhotos(place)}

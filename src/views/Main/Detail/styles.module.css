@@ -51,8 +51,12 @@
     /*text-align: center;*/
     display: flex;
     margin-top: -2em;
+    margin-left: -2%;
     h2, h4 {
       margin-left: .5em;
 
     }
 }
+/*.rate {
+  margin-left: -80%
+}*/
