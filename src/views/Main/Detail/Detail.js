@@ -2,6 +2,9 @@ import React, { PropTypes as T } from 'react'
 import classnames from 'classnames'
 import {getDetails} from 'utils/googleApiHelpers'
 
+import Rating from 'components/Rating/Rating'
+import Price from 'components/Price/Price'
+
 import styles from './styles.module.css'
 
 export class Detail extends React.Component {
@@ -76,14 +79,34 @@ renderPhotos(place) {
     const {place} = this.state;
 
     return (
-      <div className={styles.wrapper}>
-        <div className={styles.header}>
-          <h2>{place.name}</h2>
+    <div className={styles.wrapper}>
+
+      <div className={styles.header}>
+      <h2>{place.types}</h2>
+        <h2>{place.name}</h2>
+        <div className={styles.rate}><Rating
+        percentage={(place.rating/5)} />
+        <Price className={styles.price_level}
+        percentage={(place.price_level/5)} />
         </div>
-        <div className={styles.details}>
-          {this.renderPhotos(place)}
+        <h4>{place.formatted_address}</h4>
+
+        <div className={styles.bar}>
+          <h4>{place.formatted_phone_number}</h4>
+          <h2><a href={place.website}>Website</a></h2>
+          <h2><a href={place.url}>Map</a></h2>
         </div>
       </div>
+
+
+
+      <div className={styles.details}>
+        {this.renderPhotos(place)}
+
+
+
+      </div>
+    </div>
 
     )
   }

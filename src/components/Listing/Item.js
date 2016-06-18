@@ -2,6 +2,7 @@ import React, { PropTypes as T } from 'react'
 import classnames from 'classnames'
 
 import Rating from 'components/Rating/Rating'
+import Price from 'components/Price/Price'
 import styles from './styles.module.css'
 
 export class Item extends React.Component {
@@ -28,6 +29,9 @@ export class Item extends React.Component {
           <h1 className={classnames(styles.title)}>{place.name}</h1>
           <Rating className={styles.rating}
                   percentage={(place.rating/5)} />
+            <Price className={styles.price_level}
+            percentage={(place.price_level/5)} />
+
 
           </div>
     )
