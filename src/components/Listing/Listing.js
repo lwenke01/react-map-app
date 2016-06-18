@@ -5,6 +5,10 @@ import Item from './Item';
 import styles from './styles.module.css'
 
 export class Listing extends React.Component {
+
+//   function byRatingDesc(h1, h2) {
+//   return h2.itemRating - h1.itemRating;
+// }
   render() {
     return (
       <div className={classnames(styles.container)}>

@@ -25,7 +25,7 @@ export class Container extends React.Component {
       {
         location: map.center,
         radius: '500',
-        types: ['cafe']
+        types: ['bar']
 
       }
     ).then((results, pagination) => {

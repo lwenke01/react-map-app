@@ -48,6 +48,31 @@ renderPhotos(place) {
   </div>
 }
 
+// get hours
+// renderHours(place) {
+//   if (!place.opening_hours || place.opening_hours.length == 0) return;
+//
+//
+//   return <div className={styles.hours}>
+//     {place.opening_hours.map(h => {
+//       const url = `${h.getUrl(cfg)}.png`
+//       return (<img key={url} src={url} />)
+//     })}
+//   </div>
+// }
+
+// renderReviews(place) {
+//   if (!place.reviews || place.reviews.length == 0) return;
+//
+//   // const cfg = {maxWidth: 100, maxHeight: 100}
+//   return <div className={styles.photoStrip}>
+//     {place.reviews.map(r => {
+//       const url = `${p.getUrl(cfg)}.png`
+//       return (<img key={url} src={url} />)
+//     })}
+//   </div>
+// }
+
   getDetails(map) {
     const {google, params} = this.props;
     const {placeId} = params;
@@ -75,19 +100,35 @@ renderPhotos(place) {
       return (<div className={styles.wrapper}>
       Loading ...
       </div>)
+
     }
     const {place} = this.state;
 
     return (
       <div className={styles.wrapper}>
+
         <div className={styles.header}>
+        <h2>{place.types}</h2>
           <h2>{place.name}</h2>
-          <Rating className={styles.rating1}
-                  percentage={(place.rating/5)} />
-          <p>{place.price_level}</p>
+          <h4>{place.formatted_address}</h4>
+
+          <div className={styles.bar}>
+            <h4>{place.formatted_phone_number}</h4>
+            <h2><a href={place.website}>Website</a></h2>
+            <h2><a href={place.url}>Map</a></h2>
+          </div>
         </div>
+
+
+            <div>Rating:<Rating className={styles.rating1}
+                  percentage={(place.rating/5)} />
+                </div>
+
         <div className={styles.details}>
           {this.renderPhotos(place)}
+
+
+
         </div>
       </div>
 

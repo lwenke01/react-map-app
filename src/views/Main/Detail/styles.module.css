@@ -42,5 +42,17 @@
     img {
       margin: 0 1px;
     }
+
+
+
+    }
   }
+  .bar {
+    /*text-align: center;*/
+    display: flex;
+    margin-top: -2em;
+    h2, h4 {
+      margin-left: .5em;
+        
+    }
 }
