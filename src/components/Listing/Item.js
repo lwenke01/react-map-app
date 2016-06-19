@@ -30,7 +30,7 @@ export class Item extends React.Component {
           <Rating className={styles.rating}
                   percentage={(place.rating/5)} />
             <Price className={styles.price_level}
-            percentage={(place.price_level/5)} />
+            percentage={(place.price_level/4)} />
 
 
           </div>

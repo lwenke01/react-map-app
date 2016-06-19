@@ -82,7 +82,7 @@ renderPhotos(place) {
     <div className={styles.wrapper}>
 
       <div className={styles.header}>
-      <h2>{place.types}</h2>
+
         <h2>{place.name}</h2>
         <div className={styles.rate}><Rating
         percentage={(place.rating/5)} />
