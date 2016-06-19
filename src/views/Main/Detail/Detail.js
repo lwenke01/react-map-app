@@ -83,15 +83,19 @@ renderPhotos(place) {
 
       <div className={styles.header}>
 
-        <h2>{place.name}</h2>
-        <div className={styles.rate}><Rating
-        percentage={(place.rating/5)} />
-        <Price className={styles.price_level}
-        percentage={(place.price_level/5)} />
-        </div>
-        <h4>{place.formatted_address}</h4>
+          <h2>{place.name}</h2>
+          <h4>{place.formatted_address}</h4>
+        <div className={styles.rateBar}>
+          <Rating className={styles.ratingDet}
+            percentage={(place.rating/5)} />
+    
+          </div>
+          <Price className={styles.priceDet}
+            percentage={(place.price_level)} />
+
 
         <div className={styles.bar}>
+
           <h4>{place.formatted_phone_number}</h4>
           <h2><a href={place.website}>Website</a></h2>
           <h2><a href={place.url}>Map</a></h2>

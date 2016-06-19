@@ -6,7 +6,7 @@
   font-size: 25px;
   height: 25px;
   width: 100px;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   position: relative;
   padding: 0;
   text-shadow: 0px 1px 0 var(--light-gray);
@@ -21,6 +21,7 @@
   top: 0;
   left: 0;
   overflow: hidden;
+  color: rgb(245,191,37);
 }
 
 .bottom {
