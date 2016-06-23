@@ -39,7 +39,7 @@ export class Detail extends React.Component {
 renderPhotos(place) {
   if (!place.photos || place.photos.length == 0) return;
 
-  const cfg = {maxWidth: 100, maxHeight: 100}
+  const cfg = {maxWidth: 300, maxHeight: 300}
   return <div className={styles.photoStrip}>
     {place.photos.map(p => {
       const url = `${p.getUrl(cfg)}.png`
@@ -83,7 +83,7 @@ renderPhotos(place) {
 
       <div className={styles.header}>
 
-      
+
           <h2>{place.name}</h2>
           <h4>{place.formatted_address}</h4>
         <div className={styles.rateBar}>
@@ -108,10 +108,17 @@ renderPhotos(place) {
       <div className={styles.details}>
         {this.renderPhotos(place)}
 
-        {place.opening_hours.open_now}
-        {place.opening_hours.weekday_text}
+        <ul>
+        <strong>Hours of Operation:</strong>
+        <li>{place.opening_hours.weekday_text[0]}</li>
+        <li>{place.opening_hours.weekday_text[1]}</li>
+        <li>{place.opening_hours.weekday_text[2]}</li>
+        <li>{place.opening_hours.weekday_text[3]}</li>
+        <li>{place.opening_hours.weekday_text[4]}</li>
+        <li>{place.opening_hours.weekday_text[5]}</li>
+        <li>{place.opening_hours.weekday_text[6]}</li>
 
-
+        </ul>
       </div>
     </div>
 
