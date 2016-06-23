@@ -20,7 +20,7 @@ const dest    = join(root, 'dist');
 var config = getConfig({
   isDev: isDev,
   in: join(src, 'app.js'),
-  out: dest,
+  out: dist,
   html: function (context) {
     return {
       'index.html': context.defaultTemplate({
