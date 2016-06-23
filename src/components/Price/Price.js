@@ -1,11 +1,14 @@
+import React, { Component, PropTypes as T } from 'react'
 
-import React, { PropTypes as T } from 'react'
-import styles from './styles.module.css';
+import cx from 'classnames'
+
+import styles from './styles.module.css'
 
 const PriceIcon = (props) => (<span>$</span>)
 
 export class Price extends React.Component {
   render() {
+
     const {percentage} = this.props;
     const style = {
       width: `${(percentage || 0) * 100}%`
@@ -18,14 +21,9 @@ export class Price extends React.Component {
             <PriceIcon />
             <PriceIcon />
 
-        </div>
-        <div className={styles.bottom}>
-          <PriceIcon />
-          <PriceIcon />
-          <PriceIcon />
-          <PriceIcon />
 
         </div>
+
       </div>
     )
   }

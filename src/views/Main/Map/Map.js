@@ -11,6 +11,7 @@ export class MapComponent extends React.Component {
       return;
     }
     return this.props.places.map(p => {
+      // console.log(this.props.places);
       return <Marker
                 key={p.id}
                 name={p.id}
@@ -30,6 +31,7 @@ export class MapComponent extends React.Component {
         return React.cloneElement(c, this.props, {
           map: this.props.map,
           google: this.props.google
+
         })
       })
     } else {
@@ -55,6 +57,30 @@ export class MapComponent extends React.Component {
       </Map>
     )
   }
+}
+Map.propTypes = {
+  google: T.object,
+  zoom: T.number,
+  centerAroundCurrentLocation: T.bool,
+  center: T.object,
+  initialCenter: T.object,
+  className: T.string,
+  style: T.object,
+  containerStyle: T.object,
+  visible: T.bool
+}
+
+ Map.defaultProps = {
+  zoom: 13,
+  initialCenter: {
+    lat: 47.6062,
+    lng: -122.3321
+  },
+  center: {},
+  centerAroundCurrentLocation: false,
+  style: {},
+  containerStyle: {},
+  visible: true
 }
 // Map.propTypes = {
 //   google: React.PropTypes.object,

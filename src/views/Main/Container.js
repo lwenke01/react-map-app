@@ -16,11 +16,36 @@ export class Container extends React.Component {
     this.state = {
       places: [],
       pagination: null
+
     }
   }
+
+  //filter results
+  // const _renderRestaurant = function(place) {
+  //   console.log('PLACE ',place);
+  //   return place.types[0] === 'restaurant'
+  //
+  // }
+
+
   onReady(mapProps, map){
+    // const {place} = this.props
+    // const restaurant = place.types.filter(_renderRestaurant)
+    // console.log('mapProp ', mapProps);
+    //   console.log('map',map);
+    //   console.log('mapLoc',location);
+    //   console.log('types ', this.props.place.place);
+      // console.log('place ', mapProps.types[0]);
+
+
     searchNearby(
+      // var restaurantOne = function(first) {
+      //   console.log(mapProp[0]);
+      // }
+
+      // console.log('google props ',this.props.google)
       this.props.google,
+
       map,
       {
         location: map.center,
@@ -46,11 +71,13 @@ export class Container extends React.Component {
     const {push} = this.context.router;
     push(`/map/detail/${place.place_id}`)
   }
+
   render() {
     let children = null;
     if (this.props.children) {
       children = React.cloneElement(this.props.children,
         {
+
           google: this.props.google,
           places: this.state.places,
           loaded: this.props.loaded,
@@ -83,6 +110,19 @@ export class Container extends React.Component {
      )
    }
  }
+
+//  Map.defaultProps = {
+//   zoom: 14,
+//   initialCenter: {
+//     lat: 47.774929,
+//     lng: -122.419416
+//   },
+//   center: {},
+//   centerAroundCurrentLocation: false,
+//   style: {},
+//   containerStyle: {},
+//   visible: true
+// }
 
 Container.contextTypes = {
   router: React.PropTypes.object
