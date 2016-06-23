@@ -15,25 +15,42 @@ export class Container extends React.Component {
 
     this.state = {
       places: [],
-      pagination: null,
-      initialCenter: {
-        lat: 47.6062,
-        lng: -122.3321
-      }
+      pagination: null
+
     }
   }
+
+  //filter results
+  // const _renderRestaurant = function(place) {
+  //   console.log('PLACE ',place);
+  //   return place.types[0] === 'restaurant'
+  //
+  // }
+
+
   onReady(mapProps, map){
-    console.log(mapProps);
-      console.log(map);
+    // const {place} = this.props
+    // const restaurant = place.types.filter(_renderRestaurant)
+    // console.log('mapProp ', mapProps);
+    //   console.log('map',map);
+    //   console.log('mapLoc',location);
+    //   console.log('types ', this.props.place.place);
+      // console.log('place ', mapProps.types[0]);
+
+
     searchNearby(
-      // console.log(this.props.google)
+      // var restaurantOne = function(first) {
+      //   console.log(mapProp[0]);
+      // }
+
+      // console.log('google props ',this.props.google)
       this.props.google,
 
       map,
       {
         location: map.center,
-        radius: '500000',
-        types: ['restaurant', 'cafe']
+        radius: '500',
+        types: ['restaurant']
 
       }
     ).then((results, pagination) => {
@@ -54,11 +71,13 @@ export class Container extends React.Component {
     const {push} = this.context.router;
     push(`/map/detail/${place.place_id}`)
   }
+
   render() {
     let children = null;
     if (this.props.children) {
       children = React.cloneElement(this.props.children,
         {
+
           google: this.props.google,
           places: this.state.places,
           loaded: this.props.loaded,

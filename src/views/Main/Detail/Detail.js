@@ -83,15 +83,16 @@ renderPhotos(place) {
 
       <div className={styles.header}>
 
+      
           <h2>{place.name}</h2>
           <h4>{place.formatted_address}</h4>
         <div className={styles.rateBar}>
           <Rating className={styles.ratingDet}
-            percentage={(place.rating/5)} />
-    
+            percentage={(place.rating/6)} />
+
           </div>
           <Price className={styles.priceDet}
-            percentage={(place.price_level)} />
+            percentage={(place.price_level/11)} />
 
 
         <div className={styles.bar}>
@@ -107,6 +108,8 @@ renderPhotos(place) {
       <div className={styles.details}>
         {this.renderPhotos(place)}
 
+        {place.opening_hours.open_now}
+        {place.opening_hours.weekday_text}
 
 
       </div>

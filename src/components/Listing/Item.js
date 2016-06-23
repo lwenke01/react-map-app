@@ -7,7 +7,6 @@ import styles from './styles.module.css'
 
 export class Item extends React.Component {
   constructor(props) {
-    console.log(props);
     super(props);
 
     this.state = {
@@ -29,9 +28,11 @@ export class Item extends React.Component {
 
           <h1 className={classnames(styles.title)}>{place.name}</h1>
           <Rating className={styles.rating}
-                  percentage={(place.rating/5)} />
+                  percentage={(place.rating/6)} />
             <Price className={styles.price_level}
-            percentage={(place.price_level/4)} />
+             percentage={(place.price_level)/11}/>
+
+    
 
 
           </div>
