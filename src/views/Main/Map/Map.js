@@ -56,6 +56,19 @@ export class MapComponent extends React.Component {
     )
   }
 }
+
+ Map.defaultProps = {
+  zoom: 11,
+  initialCenter: {
+    lat: 47.774929,
+    lng: -122.419416
+  },
+  center: {},
+  centerAroundCurrentLocation: false,
+  style: {},
+  containerStyle: {},
+  visible: true
+}
 // Map.propTypes = {
 //   google: React.PropTypes.object,
 //   zoom: React.PropTypes.number,

@@ -15,17 +15,25 @@ export class Container extends React.Component {
 
     this.state = {
       places: [],
-      pagination: null
+      pagination: null,
+      initialCenter: {
+        lat: 47.6062,
+        lng: -122.3321
+      }
     }
   }
   onReady(mapProps, map){
+    console.log(mapProps);
+      console.log(map);
     searchNearby(
+      // console.log(this.props.google)
       this.props.google,
+
       map,
       {
         location: map.center,
-        radius: '500',
-        types: ['restaurant']
+        radius: '500000',
+        types: ['restaurant', 'cafe']
 
       }
     ).then((results, pagination) => {
@@ -83,6 +91,19 @@ export class Container extends React.Component {
      )
    }
  }
+
+//  Map.defaultProps = {
+//   zoom: 14,
+//   initialCenter: {
+//     lat: 47.774929,
+//     lng: -122.419416
+//   },
+//   center: {},
+//   centerAroundCurrentLocation: false,
+//   style: {},
+//   containerStyle: {},
+//   visible: true
+// }
 
 Container.contextTypes = {
   router: React.PropTypes.object
